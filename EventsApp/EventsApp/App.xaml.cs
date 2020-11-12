@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventsApp.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +8,8 @@ namespace EventsApp {
         public App() {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new EventsPage());
+
         }
 
         protected override void OnStart() {
