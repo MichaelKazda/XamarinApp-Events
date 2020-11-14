@@ -1,16 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:SuaveControls.Views;assembly=SuaveControls.FloatingActionButton"
              x:Class="EventsApp.Pages.EventsPage">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
-                        AbsoluteLayout.LayoutFlags="SizeProportional">
+
+            <ScrollView 
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout>
-                    <Label Text="EventsPage"
+                    <Label 
+                        Text="EventsPage"
                         VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand" />      
+                        HorizontalOptions="CenterAndExpand" />
+
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!-- tady budou jednotlivý eventy který se vypíšou pomocí  -->
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
                 </StackLayout>
             </ScrollView>
             

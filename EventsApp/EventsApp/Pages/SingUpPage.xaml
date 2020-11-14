@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventsApp.Pages.SingUpPage">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" 
-                     VerticalOptions="CenterAndExpand">
-            <Label Text="Just Log in!" FontSize="30" TextColor="black" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <Button Clicked="SingUpButton_ClickedAsync" Text="Sing Up with Google" HorizontalOptions="Center" Padding="15"/>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="#4a2ca8" HeightRequest="120" CornerRadius="80" Margin="-25">
+                    <Label Text="We present you the EventsApp" TextColor="white" 
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="25"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="Just Log in!" FontSize="30" TextColor="black" FontAttributes="Bold"/>
+                <Button Clicked="SingUpButton_ClickedAsync" Text="Sing Up with Google" Padding="15"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

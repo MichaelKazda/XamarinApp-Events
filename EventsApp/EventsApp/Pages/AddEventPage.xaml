@@ -4,9 +4,9 @@
              x:Class="EventsApp.Pages.AddEventPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="AddEventPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="What's happening?"/>
+            <Entry/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
