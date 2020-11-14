@@ -12,5 +12,10 @@ namespace EventsApp.Pages {
         public SingUpPage() {
             InitializeComponent();
         }
+
+        private async void SingUpButton_ClickedAsync(object sender, EventArgs e) {
+            Navigation.InsertPageBefore(new EventsPage(), this);
+            await Navigation.PopAsync();
+        }
     }
 }

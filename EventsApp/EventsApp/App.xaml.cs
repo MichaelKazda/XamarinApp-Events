@@ -8,7 +8,8 @@ namespace EventsApp {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new EventsPage());
+            
+            MainPage = new NavigationPage(new SingUpPage());
 
         }
 
@@ -20,5 +21,6 @@ namespace EventsApp {
 
         protected override void OnResume() {
         }
+
     }
 }

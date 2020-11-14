@@ -7,6 +7,10 @@
             <Label Text="EventsPage"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <AbsoluteLayout>
+                <Button Clicked="AddEventButton_Clicked"  Text="+" CornerRadius="40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,75,75"/>
+            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
