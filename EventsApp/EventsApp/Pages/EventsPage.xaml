@@ -1,16 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:SuaveControls.Views;assembly=SuaveControls.FloatingActionButton"
              x:Class="EventsApp.Pages.EventsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="EventsPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <AbsoluteLayout>
-                <Button Clicked="AddEventButton_Clicked"  Text="+" CornerRadius="40"
-                        AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,75,75"/>
-            </AbsoluteLayout>
-        </StackLayout>
+        <AbsoluteLayout>
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="SizeProportional">
+                <StackLayout>
+                    <Label Text="EventsPage"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />      
+                </StackLayout>
+            </ScrollView>
+            
+            <ImageButton
+                    AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="#4a2ca8"
+                    CornerRadius="40"
+                    HeightRequest="65"
+                    Source="ic_add.png"
+                    WidthRequest="65" 
+                    Clicked="AddEventButton_Clicked"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
