@@ -22,23 +22,43 @@
                         Margin="0,20,0,0">
                     
                     <Label Text="Today" Margin="10,0,10,0"/>
-                    <Label Text="Next week" Margin="10,0,10,0"/>
+                    <Label Text="Next week" Margin="10,0,10,0" TextDecorations="Underline"/>
                     <Label Text="Next month" Margin="10,0,10,0"/>
                     <Label Text="All time" Margin="10,0,10,0"/>
                 </StackLayout>
 
-                <Label Text="9.11.2020 - 15.11.2020" HorizontalOptions="Center" Margin="0,15,0,0"/>
+                <Label 
+                    Text="9.11.2020 - 15.11.2020" 
+                    HorizontalOptions="Center" 
+                    Margin="0,15,0,0"/>
 
             </StackLayout>
 
             <!-- Scrollview part of layout with generated events -->
-            <StackLayout AbsoluteLayout.LayoutBounds="1,140,1,1"
-                    AbsoluteLayout.LayoutFlags="SizeProportional">
+            <StackLayout 
+                AbsoluteLayout.LayoutBounds="1,140,1,1"
+                AbsoluteLayout.LayoutFlags="SizeProportional">
 
-                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ScrollView 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand">
 
                     <!-- use this template in viewcell -->
                     <StackLayout>
+
+                        <Frame 
+                            BackgroundColor="DimGray" 
+                            CornerRadius="15"
+                            Margin="15,10,15,10">
+
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Mikes's bday" FontSize="30" Padding="70,0,70,5"/>
+                                <Label Text="Saturday 14.11."/>
+                                <Label Text="16:30 - 20:30"/>
+                                <Label Text="LynnStreet 402, Boston, MA"/>
+                                <Label Text="Bring a present"/>
+                            </StackLayout>
+                        </Frame>
 
                         <Frame 
                             BackgroundColor="DimGray" 

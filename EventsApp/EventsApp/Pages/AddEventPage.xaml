@@ -3,43 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventsApp.Pages.AddEventPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Margin="15">
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" Margin="15">
 
-            <Label Text="What's happening?"/>
-            <Entry/>
+                <Label Text="What's happening?" FontSize="20"/>
+                <Entry/>
 
-            <Label Text="Something to note?"/>
-            <Entry/>
+                <Label Text="Something to note?" FontSize="20"/>
+                <Entry/>
 
-            <Label Text="When?"/>
-            <DatePicker/>
+                <Label Text="When?" FontSize="20"/>
+                <DatePicker/>
 
-            <StackLayout Orientation="Horizontal">
-                <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0">
-                    <Label Text="From"/>
-                    <TimePicker/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0">
+                        <Label Text="From" FontSize="20"/>
+                        <TimePicker/>
+                    </StackLayout>
+
+                    <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="1">
+                        <Label Text="To" FontSize="20"/>
+                        <TimePicker/>
+                    </StackLayout>
                 </StackLayout>
 
-                <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="1">
-                    <Label Text="To"/>
-                    <TimePicker/>
+                <Label Text="Years counter (how old, year of anniv)" FontSize="20"/>
+                <Entry/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Repeat yearly?" FontSize="20"/>
+                    <Switch/>
                 </StackLayout>
+
+                <Label Text="Where?" FontSize="20"/>
+                <Entry/>
+
+                <Label Text="Choose background" FontSize="20"/>
+                <Entry Placeholder="choose from gallery"/>
+
             </StackLayout>
-
-            <Label Text="Years counter (how old, year of anniv)"/>
-            <Entry/>
-
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Repeat yearly?"/>
-                <Switch/>
-            </StackLayout>
-
-            <Label Text="Where?"/>
-            <Entry/>
-
-            <Label Text="Choose background"/>
-            <Entry Placeholder="choose from gallery"/>
-
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

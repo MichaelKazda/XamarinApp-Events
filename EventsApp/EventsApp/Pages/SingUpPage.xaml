@@ -5,14 +5,65 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Frame BackgroundColor="#4a2ca8" HeightRequest="120" CornerRadius="80" Margin="-25">
-                    <Label Text="We present you the EventsApp" TextColor="white" 
-                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="25"/>
+                <Frame 
+                    BackgroundColor="#4a2ca8" 
+                    HeightRequest="120" 
+                    CornerRadius="80" 
+                    Margin="-25">
+                    <StackLayout>
+
+                        <Label 
+                            Text="We present you" 
+                            FontFamily="{StaticResource DroidSansMono}" 
+                            TextColor="white" 
+                            VerticalOptions="StartAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                            FontAttributes="Bold"
+                            FontSize="35" 
+                            Margin="0,10,0,0"/>
+
+                        <StackLayout 
+                            Orientation="Horizontal"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,-110,0,0">
+
+                            <Label 
+                                Text="the" 
+                                TextColor="white" 
+                                FontFamily="{StaticResource DroidSansMono}" 
+                                FontSize="25"/>
+
+                            <Label 
+                                Text="EventsApp" 
+                                TextColor="white"
+                                FontAttributes="Bold"
+                                FontFamily="{StaticResource DroidSansMono}" 
+                                FontSize="40"
+                                Margin="0,0,0,-50" TextDecorations="Underline"/>
+                        </StackLayout>
+
+                    </StackLayout>
                 </Frame>
             </StackLayout>
-            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Label Text="Just Log in!" FontSize="30" TextColor="black" FontAttributes="Bold"/>
-                <Button Clicked="SingUpButton_ClickedAsync" Text="Sing Up with Google" Padding="15"/>
+            
+            <StackLayout 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand">
+
+                <Label 
+                    Text="Just Log in!" 
+                    FontFamily="{StaticResource DroidSansMono}" 
+                    FontSize="30" TextColor="black" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"/>
+
+                <Button 
+                    Clicked="SingUpButton_Clicked" 
+                    Text="Sing Up with Google" 
+                    Padding="15"
+                    HorizontalOptions="CenterAndExpand"/>
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventsApp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="DroidSansMono">
+                <On Platform="Android" Value="DroidSansMono.tff"/>
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

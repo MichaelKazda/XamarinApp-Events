@@ -12,7 +12,6 @@ namespace EventsApp.Pages {
     public partial class EventsPage : ContentPage {
         public EventsPage() {
             InitializeComponent();
-
         }
 
         private void AddEventButton_Clicked(object sender, EventArgs e) {

@@ -11,11 +11,11 @@ namespace EventsApp.Pages {
     public partial class SingUpPage : ContentPage {
         public SingUpPage() {
             InitializeComponent();
+
         }
 
-        private async void SingUpButton_ClickedAsync(object sender, EventArgs e) {
-            Navigation.InsertPageBefore(new EventsPage(), this);
-            await Navigation.PopAsync();
+        private void SingUpButton_Clicked(object sender, EventArgs e) {
+            App.Current.MainPage = new NavigationPage(new EventsPage());
         }
     }
 }
