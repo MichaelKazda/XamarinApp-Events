@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventsApp.Pages.AddEventPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Vertical" Margin="15">
+
             <Label Text="What's happening?"/>
             <Entry/>
-            
+
+            <Label Text="Something to note?"/>
+            <Entry/>
+
+            <Label Text="When?"/>
+            <DatePicker/>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0">
+                    <Label Text="From"/>
+                    <TimePicker/>
+                </StackLayout>
+
+                <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="1">
+                    <Label Text="To"/>
+                    <TimePicker/>
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Years counter (how old, year of anniv)"/>
+            <Entry/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Repeat yearly?"/>
+                <Switch/>
+            </StackLayout>
+
+            <Label Text="Where?"/>
+            <Entry/>
+
+            <Label Text="Choose background"/>
+            <Entry Placeholder="choose from gallery"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
