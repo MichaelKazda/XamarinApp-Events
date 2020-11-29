@@ -109,15 +109,17 @@
             
             
             <!-- FAB -->
-            <ImageButton
-                    AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    BackgroundColor="#4a2ca8"
-                    CornerRadius="40"
-                    HeightRequest="65"
-                    Source="ic_add.png"
-                    WidthRequest="65" 
-                    Clicked="AddEventButton_Clicked"/>
+            <Button
+                Text="+"
+                FontSize="34"
+                TextColor="{StaticResource WhiteColor}"
+                BackgroundColor="{StaticResource PurpleColor}"
+                AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                CornerRadius="40"
+                HeightRequest="65"
+                WidthRequest="65"
+                Clicked="AddEventButton_Clicked"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

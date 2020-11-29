@@ -1,47 +1,139 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EventsApp.Pages.AddEventPage">
+             x:Class="EventsApp.Pages.AddEventPage" BackgroundColor="{StaticResource WhiteColor}">
+
+    <NavigationPage.TitleView>
+        <Label 
+            Text="Add Event"
+            TextColor="{StaticResource WhiteColor}"
+            FontSize="25"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
-        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout Orientation="Vertical" Margin="15">
+        <ScrollView 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand">
 
-                <Label Text="What's happening?" FontSize="20"/>
-                <Entry/>
+            <AbsoluteLayout 
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
 
-                <Label Text="Something to note?" FontSize="20"/>
-                <Entry/>
+                <StackLayout Orientation="Vertical" Margin="15">
 
-                <Label Text="When?" FontSize="20"/>
-                <DatePicker/>
+                    <!-- Event name -->
+                    <Label 
+                        Text="What's happening?" 
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"/>
+                    <Entry 
+                        TextColor="{StaticResource BlackColor}"/>
 
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0">
-                        <Label Text="From" FontSize="20"/>
-                        <TimePicker/>
+                    <!-- Event description -->
+                    <Label 
+                        Text="Something to note?" 
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"/>
+                    <Entry 
+                        TextColor="{StaticResource BlackColor}"/>
+
+                    <!-- Event date -->
+                    <Label 
+                        Text="When?"
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"/>
+                    <DatePicker 
+                        TextColor="{StaticResource BlackColor}"/>
+
+                    <!-- Event time from - to  -->
+                    <StackLayout 
+                        Orientation="Horizontal">
+
+                        <StackLayout 
+                            WidthRequest="185" 
+                            HorizontalOptions="CenterAndExpand" 
+                            Orientation="Vertical" 
+                            Grid.Column="0">
+
+                            <Label 
+                                Text="From" 
+                                TextColor="{StaticResource BlackColor}" 
+                                FontSize="20"/>
+                            <TimePicker 
+                                TextColor="{StaticResource BlackColor}"/>
+                        </StackLayout>
+
+                        <StackLayout 
+                            WidthRequest="185" 
+                            HorizontalOptions="CenterAndExpand" 
+                            Orientation="Vertical" 
+                            Grid.Column="1">
+
+                            <Label 
+                                Text="To" 
+                                TextColor="{StaticResource BlackColor}" 
+                                FontSize="20"/>
+                            <TimePicker 
+                                TextColor="{StaticResource BlackColor}"/>
+                        </StackLayout>
+
                     </StackLayout>
 
-                    <StackLayout WidthRequest="185" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="1">
-                        <Label Text="To" FontSize="20"/>
-                        <TimePicker/>
+                    <!-- Event something -->
+                    <Label 
+                        Text="Years counter (how old, year of anniv)" 
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"/>
+                    <Entry 
+                        TextColor="{StaticResource BlackColor}"/>
+
+                    <!-- Event repetition -->
+                    <StackLayout 
+                        Orientation="Horizontal">
+
+                        <Label 
+                            Text="Repeat yearly?" 
+                            TextColor="{StaticResource BlackColor}" 
+                            FontSize="20"/>
+                        <Switch/>
                     </StackLayout>
+
+                    <!-- Event place -->
+                    <Label 
+                        Text="Where?" 
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"/>
+                    <Entry 
+                        TextColor="{StaticResource BlackColor}"/>
+
+                    <!-- Event background -->
+                    <Label 
+                        Text="Event background" 
+                        TextColor="{StaticResource BlackColor}" 
+                        FontSize="20"
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"/>
+                    <Button
+                        Clicked="GetImageButton_Clicked"
+                        Text="Pick from gallery" 
+                        HorizontalOptions="CenterAndExpand"/>
+
                 </StackLayout>
 
-                <Label Text="Years counter (how old, year of anniv)" FontSize="20"/>
-                <Entry/>
+                <!-- FAB -->
+                <Button
+                    Text="+"
+                    FontSize="34"
+                    TextColor="{StaticResource WhiteColor}"
+                    BackgroundColor="{StaticResource PurpleColor}"
+                    AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    CornerRadius="40"
+                    HeightRequest="65"
+                    WidthRequest="65"
+                    Clicked="AddEventButton_Clicked"/>
 
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Repeat yearly?" FontSize="20"/>
-                    <Switch/>
-                </StackLayout>
-
-                <Label Text="Where?" FontSize="20"/>
-                <Entry/>
-
-                <Label Text="Choose background" FontSize="20"/>
-                <Entry Placeholder="choose from gallery"/>
-
-            </StackLayout>
+            </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

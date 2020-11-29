@@ -11,5 +11,10 @@
     <!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
     <item name="colorAccent">#4a2ca8</item>
 
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+  
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#4a2ca8</item>
   </style>
 </resources>
