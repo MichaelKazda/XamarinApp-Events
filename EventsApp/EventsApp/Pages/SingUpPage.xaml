@@ -6,7 +6,7 @@
         <StackLayout>
             <StackLayout>
                 <Frame 
-                    BackgroundColor="#4a2ca8" 
+                    BackgroundColor="{StaticResource PurpleColor}" 
                     HeightRequest="120" 
                     CornerRadius="80" 
                     Margin="-25">
@@ -30,7 +30,7 @@
 
                             <Label 
                                 Text="the" 
-                                TextColor="white" 
+                                TextColor="{StaticResource WhiteColor}" 
                                 FontFamily="{StaticResource DroidSansMono}" 
                                 FontSize="25"/>
 
@@ -54,7 +54,7 @@
                 <Label 
                     Text="Just Log in!" 
                     FontFamily="{StaticResource DroidSansMono}" 
-                    FontSize="30" TextColor="black" 
+                    FontSize="30" TextColor="{StaticResource BlackColor}" 
                     FontAttributes="Bold"
                     HorizontalOptions="Center"/>
 

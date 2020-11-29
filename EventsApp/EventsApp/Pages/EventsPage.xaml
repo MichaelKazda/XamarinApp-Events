@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="EventsApp.Pages.EventsPage">
+             x:Class="EventsApp.Pages.EventsPage" BackgroundColor="#ffffff">
+
     <ContentPage.Content>
         <AbsoluteLayout>
             
@@ -9,28 +10,41 @@
             <StackLayout 
                     AbsoluteLayout.LayoutBounds="0,0,1,0.1"
                     AbsoluteLayout.LayoutFlags="SizeProportional">
+
+                <Frame 
+                    BackgroundColor="{StaticResource PurpleColor}"
+                    Margin="0,-25,0,0">
+                    
+                    <Label 
+                        Text="Your Events"
+                        TextColor="{StaticResource WhiteColor}"
+                        Margin="0,15,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="30"/>
+                </Frame>
+                
+                <Frame 
+                    BackgroundColor="{StaticResource PurpleColor}" 
+                    CornerRadius="80"
+                    Margin="0,-35,0,0">
+                    
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand">
+
+                        <Label Text="Today" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                        <Label Text="Next week" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
+                        <Label Text="Next month" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                        <Label Text="All time" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                    </StackLayout>
+                </Frame>
                 
                 <Label 
-                    Text="Your Events"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" 
-                    FontSize="30"/>
-
-                <StackLayout 
-                        Orientation="Horizontal" 
-                        HorizontalOptions="CenterAndExpand" 
-                        Margin="0,20,0,0">
-                    
-                    <Label Text="Today" Margin="10,0,10,0"/>
-                    <Label Text="Next week" Margin="10,0,10,0" TextDecorations="Underline"/>
-                    <Label Text="Next month" Margin="10,0,10,0"/>
-                    <Label Text="All time" Margin="10,0,10,0"/>
-                </StackLayout>
-
-                <Label 
                     Text="9.11.2020 - 15.11.2020" 
-                    HorizontalOptions="Center" 
-                    Margin="0,15,0,0"/>
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource BlackColor}"
+                    Margin="0,15,0,20"/>
 
             </StackLayout>
 
@@ -47,16 +61,17 @@
                     <StackLayout>
 
                         <Frame 
-                            BackgroundColor="DimGray" 
+                            BackgroundColor="{StaticResource PurpleColor}" 
                             CornerRadius="15"
                             Margin="15,10,15,10">
 
                             <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Mikes's bday" FontSize="30" Padding="70,0,70,5"/>
-                                <Label Text="Saturday 14.11."/>
-                                <Label Text="16:30 - 20:30"/>
-                                <Label Text="LynnStreet 402, Boston, MA"/>
-                                <Label Text="Bring a present"/>
+                                <Label Text="Mikes's bday" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
+                                <Label Text="3d 14h 23min" FontSize="25" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
+                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
+                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
+                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
+                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
                             </StackLayout>
                         </Frame>
 

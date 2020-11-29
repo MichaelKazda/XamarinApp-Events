@@ -7,6 +7,16 @@
             <OnPlatform x:TypeArguments="x:String" x:Key="DroidSansMono">
                 <On Platform="Android" Value="DroidSansMono.tff"/>
             </OnPlatform>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#4a2ca8"/>
+                <Setter Property="BarTextColor" Value="#ffffff"/>
+            </Style>
+
+            <Color x:Key="WhiteColor">#fff</Color>
+            <Color x:Key="BlackColor">#000</Color>
+            <Color x:Key="PurpleColor">#4a2ca8</Color>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -12,6 +12,7 @@ namespace EventsApp.Pages {
     public partial class EventsPage : ContentPage {
         public EventsPage() {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void AddEventButton_Clicked(object sender, EventArgs e) {

@@ -15,7 +15,14 @@ namespace EventsApp.Pages {
         }
 
         private void SingUpButton_Clicked(object sender, EventArgs e) {
-            App.Current.MainPage = new NavigationPage(new EventsPage());
+            NavigationPage page = new NavigationPage(new EventsPage()) {
+                HeightRequest = 500,
+                BarTextColor = Color.FromHex("#ffffff"),
+                BarBackgroundColor = Color.FromHex("#4a2ca8"),
+                BackgroundColor = Color.FromHex("#4a2ca8")
+
+            };
+            App.Current.MainPage = page;
         }
     }
 }
