@@ -11,7 +11,6 @@ namespace EventsApp.Pages {
     public partial class SingUpPage : ContentPage {
         public SingUpPage() {
             InitializeComponent();
-
         }
 
         private void SingUpButton_Clicked(object sender, EventArgs e) {

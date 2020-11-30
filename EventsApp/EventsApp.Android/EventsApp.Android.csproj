@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -90,7 +89,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\EventsApp\EventsApp.csproj">
-      <Project>{23B6DD5D-E14B-44CB-81AC-CD184AA17C49}</Project>
+      <Project>{55036AB9-8F70-4AF6-B03A-107D845B67A1}</Project>
       <Name>EventsApp</Name>
     </ProjectReference>
   </ItemGroup>
