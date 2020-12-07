@@ -4,139 +4,74 @@
              x:Class="EventsApp.Pages.EventsPage" BackgroundColor="#ffffff">
 
     <ContentPage.Content>
-        <AbsoluteLayout>
-            
-            <!-- Fixed upper part of layout -->
+        <AbsoluteLayout>        
             <StackLayout
                 AbsoluteLayout.LayoutBounds="0,1,1,1"
                 AbsoluteLayout.LayoutFlags="SizeProportional">
 
+                <!-- Fixed upper part of layout -->
+                <StackLayout>
+                    <Frame
+                        BackgroundColor="{StaticResource PurpleColor}">
                     
-                <Frame 
-                    BackgroundColor="{StaticResource PurpleColor}"
-                    Margin="0,-5,0,-10">
+                        <Label
+                            Margin="32,0,0,0"
+                            Text="Your Events"
+                            TextColor="{StaticResource WhiteColor}"
+                            HorizontalOptions="Start"
+                            FontSize="24"/>
+                    </Frame>
+
+                    <!-- Frame with event filters -->
+                    <Frame
+                        Margin="-8,-16,-8,0"
+                        BackgroundColor="{StaticResource PurpleColor}" 
+                        CornerRadius="70">
                     
-                    <Label 
-                        Text="Your Events"
-                        TextColor="{StaticResource WhiteColor}"
-                        Margin="0,0,0,0"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"
-                        FontSize="30"/>
-                </Frame>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Today" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                            <Label Text="Next week" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
+                            <Label Text="Next month" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                            <Label Text="All time" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <!-- Scrollview part of layout with generated events -->
+                <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+
+                        <!-- use this template in viewcell -->
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame 
+                                            BackgroundColor="{StaticResource PurpleColor}" 
+                                            CornerRadius="15"
+                                            Margin="15,10,15,10">
+
+                                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                                <Label Text="{Binding Name}" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
+                                                <Label Text="3d 14h 23min" FontSize="25" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
+                                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                 
-                <Frame 
-                    BackgroundColor="{StaticResource PurpleColor}" 
-                    CornerRadius="80"
-                    TabIndex="2">
-                    
-                    <StackLayout 
-                        Orientation="Horizontal"
-                        HorizontalOptions="CenterAndExpand">
-
-                        <Label Text="Today" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
-                        <Label Text="Next week" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
-                        <Label Text="Next month" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
-                        <Label Text="All time" Margin="10,0,10,0" TextColor="{StaticResource WhiteColor}"/>
-                    </StackLayout>
-                </Frame>
-                
-                <!--<Label 
-                    Text="9.11.2020 - 15.11.2020" 
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource BlackColor}"
-                    Margin="0,15,0,20"/>
-                -->
-            </StackLayout>
-
-            <!-- Scrollview part of layout with generated events -->
-            <StackLayout 
-                AbsoluteLayout.LayoutBounds="1,140,1,1"
-                AbsoluteLayout.LayoutFlags="SizeProportional">
-
-                <ScrollView 
-                    VerticalOptions="FillAndExpand" 
-                    HorizontalOptions="FillAndExpand">
-
-                    <!-- use this template in viewcell -->
-                    <StackLayout>
-
-                        <Frame 
-                            BackgroundColor="{StaticResource PurpleColor}" 
-                            CornerRadius="15"
-                            Margin="15,10,15,10">
-
-                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Mikes's bday" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="3d 14h 23min" FontSize="25" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
-                            </StackLayout>
-                        </Frame>
-
-                        <Frame 
-                            BackgroundColor="{StaticResource PurpleColor}" 
-                            CornerRadius="15"
-                            Margin="15,10,15,10">
-
-                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Mikes's bday" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="3d 14h 23min" FontSize="25" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
-                            </StackLayout>
-                        </Frame>
-
-                        <Frame 
-                            BackgroundColor="{StaticResource PurpleColor}" 
-                            CornerRadius="15"
-                            Margin="15,10,15,10">
-
-                            <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,0,0,25">
-                                <Label Text="Mikes's bday" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="3d 14h 23min" FontSize="25" TextColor="{StaticResource WhiteColor}" Padding="70,0,70,0"/>
-                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
-                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
-                            </StackLayout>
-                        </Frame>
-
-                        <Frame 
-                            BackgroundColor="DimGray" 
-                            CornerRadius="15"
-                            Margin="15,10,15,10">
-
-                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Mikes's bday" FontSize="30" Padding="70,0,70,5"/>
-                                <Label Text="Saturday 14.11."/>
-                                <Label Text="16:30 - 20:30"/>
-                                <Label Text="LynnStreet 402, Boston, MA"/>
-                                <Label Text="Bring a present"/>
-                            </StackLayout>
-                        </Frame>
-
-                    </StackLayout>
-
-
-                    <!--#region <ListView>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    -->
-
                 </ScrollView>
-
+               
             </StackLayout>
+
+            
 
             <!-- FAB -->
             <Button
