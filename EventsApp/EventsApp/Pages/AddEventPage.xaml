@@ -7,7 +7,7 @@
         <Label 
             Text="Add Event"
             TextColor="{StaticResource WhiteColor}"
-            FontSize="25"/>
+            FontSize="24"/>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
@@ -25,7 +25,7 @@
                     <Label 
                         Text="What's happening?" 
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"/>
+                        FontSize="24"/>
                     <Entry 
                         TextColor="{StaticResource BlackColor}"/>
 
@@ -33,7 +33,7 @@
                     <Label 
                         Text="Something to note?" 
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"/>
+                        FontSize="24"/>
                     <Entry 
                         TextColor="{StaticResource BlackColor}"/>
 
@@ -41,7 +41,7 @@
                     <Label 
                         Text="When?"
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"/>
+                        FontSize="24"/>
                     <DatePicker 
                         TextColor="{StaticResource BlackColor}"/>
 
@@ -58,7 +58,7 @@
                             <Label 
                                 Text="From" 
                                 TextColor="{StaticResource BlackColor}" 
-                                FontSize="20"/>
+                                FontSize="24"/>
                             <TimePicker 
                                 TextColor="{StaticResource BlackColor}"/>
                         </StackLayout>
@@ -72,7 +72,7 @@
                             <Label 
                                 Text="To" 
                                 TextColor="{StaticResource BlackColor}" 
-                                FontSize="20"/>
+                                FontSize="24"/>
                             <TimePicker 
                                 TextColor="{StaticResource BlackColor}"/>
                         </StackLayout>
@@ -83,7 +83,7 @@
                     <Label 
                         Text="Years counter (how old, year of anniv)" 
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"/>
+                        FontSize="24"/>
                     <Entry 
                         TextColor="{StaticResource BlackColor}"/>
 
@@ -94,7 +94,7 @@
                         <Label 
                             Text="Repeat yearly?" 
                             TextColor="{StaticResource BlackColor}" 
-                            FontSize="20"/>
+                            FontSize="24"/>
                         <Switch/>
                     </StackLayout>
 
@@ -102,7 +102,7 @@
                     <Label 
                         Text="Where?" 
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"/>
+                        FontSize="24"/>
                     <Entry 
                         TextColor="{StaticResource BlackColor}"/>
 
@@ -110,8 +110,8 @@
                     <Label 
                         Text="Event background" 
                         TextColor="{StaticResource BlackColor}" 
-                        FontSize="20"
-                        Margin="0,20,0,0"
+                        FontSize="24"
+                        Margin="0,24,0,0"
                         HorizontalTextAlignment="Center"/>
                     <Button
                         Clicked="GetImageButton_Clicked"
