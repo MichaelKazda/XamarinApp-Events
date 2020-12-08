@@ -6,7 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Google.Cloud.Firestore;
+// Google.Cloud.Firestore;
 
 namespace EventsApp.Droid
 {
@@ -17,7 +17,7 @@ namespace EventsApp.Droid
         {
 
             base.OnCreate(savedInstanceState);
-            FirestoreDb db = FirestoreDb.Create();
+            //FirestoreDb db = FirestoreDb.Create();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
