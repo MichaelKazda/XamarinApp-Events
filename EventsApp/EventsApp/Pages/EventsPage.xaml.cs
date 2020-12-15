@@ -21,11 +21,11 @@ namespace EventsApp.Pages {
             ObservableCollection<Event> events = new ObservableCollection<Event>();
 
             Event evn = new Event() {
-                Name = "neco"
+                Name = "neco"       
             };
             events.Add(evn);
 
-            EventsListView.ItemsSource = events;
+            EventsListView.BindingContext = events;
 
 
         }

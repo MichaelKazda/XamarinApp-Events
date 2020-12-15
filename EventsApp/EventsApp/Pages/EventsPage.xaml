@@ -44,7 +44,7 @@
                 <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
 
                         <!-- use this template in viewcell -->
-                        <ListView x:Name="EventsListView" IsVisible="True">
+                        <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
