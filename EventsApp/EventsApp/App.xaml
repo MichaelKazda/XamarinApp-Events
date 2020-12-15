@@ -4,6 +4,7 @@
              x:Class="EventsApp.App">
     <Application.Resources>
         <ResourceDictionary>
+
             <OnPlatform x:TypeArguments="x:String" x:Key="DroidSansMono">
                 <On Platform="Android" Value="DroidSansMono.tff"/>
             </OnPlatform>

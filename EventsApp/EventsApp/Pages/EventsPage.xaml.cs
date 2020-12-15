@@ -12,25 +12,24 @@ using Xamarin.Forms.Xaml;
 namespace EventsApp.Pages {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventsPage : ContentPage {
+
+        public Event EventViewModel { get; private set; }
+
         public EventsPage() {
             InitializeComponent();
 
             // remove nav bar
             NavigationPage.SetHasNavigationBar(this, false);
 
-            ObservableCollection<Event> events = new ObservableCollection<Event>();
+            // this 
+            EventViewModel = new Event();
+            BindingContext = EventViewModel;
 
+            ObservableCollection<Event> events = new ObservableCollection<Event>();
             Event evn = new Event() {
                 Name = "neco"       
             };
             events.Add(evn);
-
-            Event lelle = new Event()
-            {
-                Name = "diuwhdiuwq"
-            };
-            events.Add(lelle);
-
             EventsListView.ItemsSource = events;
 
         }
