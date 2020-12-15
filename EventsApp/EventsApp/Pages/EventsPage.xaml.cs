@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventsApp.Classes;
+using Plugin.Toast;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,6 @@ namespace EventsApp.Pages {
     public partial class EventsPage : ContentPage {
         public EventsPage() {
             InitializeComponent();
-            this.BindingContext = this;
 
             // remove nav bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -25,8 +25,13 @@ namespace EventsApp.Pages {
             };
             events.Add(evn);
 
-            EventsListView.BindingContext = events;
+            Event lelle = new Event()
+            {
+                Name = "diuwhdiuwq"
+            };
+            events.Add(lelle);
 
+            EventsListView.ItemsSource = events;
 
         }
 

@@ -44,22 +44,22 @@
                 <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
 
                         <!-- use this template in viewcell -->
-                        <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}">
+                        <ListView x:Name="EventsListView" IsVisible="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Frame 
+                                        <Frame
                                             BackgroundColor="{StaticResource PurpleColor}" 
                                             CornerRadius="15"
                                             Margin="16,10,16,10">
 
                                             <StackLayout HorizontalOptions="CenterAndExpand">
                                                 <Label Text="{Binding Name}" FontSize="30" TextColor="{StaticResource WhiteColor}" Padding="64,0,64,0"/>
-                                                <Label Text="3d 14h 23min" FontSize="24" TextColor="{StaticResource WhiteColor}" Padding="64,0,64,0"/>
-                                                <Label Text="Saturday 14.11." TextColor="{StaticResource WhiteColor}"/>
-                                                <Label Text="16:30 - 20:30" TextColor="{StaticResource WhiteColor}"/>
-                                                <Label Text="LynnStreet 402, Boston, MA" TextColor="{StaticResource WhiteColor}"/>
-                                                <Label Text="Bring a present" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="{Binding TimeRemaining}" FontSize="24" TextColor="{StaticResource WhiteColor}" Padding="64,0,64,0"/>
+                                                <Label Text="{Binding Date}" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="{Binding Place}" TextColor="{StaticResource WhiteColor}"/>
+                                                <Label Text="{Binding Note}" TextColor="{StaticResource WhiteColor}"/>
                                             </StackLayout>
                                         </Frame>
                                     </ViewCell>
