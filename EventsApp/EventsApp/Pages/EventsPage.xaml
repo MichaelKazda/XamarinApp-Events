@@ -43,33 +43,44 @@
                 </StackLayout>
 
                 <!-- Scrollview part of layout with generated events -->
-                <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" x:Name="Neco">
 
                         <!-- use this template in viewcell -->
                         <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <ViewCell>
-                                    <StackLayout HorizontalOptions="CenterAndExpand">
-                                        <Label Text="{Binding Name}" FontSize="30" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                                        <Label Text="{Binding TimeRemaining}" FontSize="24" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}"/>
-                                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}"/>
-                                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}"/>
-                                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}"/>
-                                    </StackLayout>
-                                    <!--<Frame
-                                            BackgroundColor="{StaticResource PurpleColor}" 
-                                            CornerRadius="15"
-                                            Margin="16,10,16,10">
-
-                                           
-                                        </Frame>-->
+                                    <ViewCell Height="400">
+                                        <StackLayout HeightRequest="400">
+                                            <Label Text="{Binding Name}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                            <Label Text="{Binding TimeRemaining}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                            <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                            <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                            <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                            <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}" Padding="8"/>
+                                        </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                
+
+                    <!--
+                        <Frame
+                            BackgroundColor="{StaticResource PurpleColor}" 
+                            CornerRadius="15"
+                            Margin="16,10,16,10">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="dwdwq" FontSize="30" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
+                        <Label Text="{Binding TimeRemaining}" FontSize="24" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
+                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}"/>
+                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}"/>
+                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}"/>
+                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}"/>
+                    </StackLayout>
+                                    
+
+                                           
+                        </Frame>-->
+
                 </ScrollView>
                
             </StackLayout>

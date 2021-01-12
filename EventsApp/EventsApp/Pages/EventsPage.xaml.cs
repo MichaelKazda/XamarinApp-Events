@@ -26,9 +26,24 @@ namespace EventsApp.Pages {
 
             // add testing event
             Event evn = new Event() {
-                Name = "neco"       
+                Name = "Name",
+                TimeRemaining = "TimeRemaining",
+                Date = "Date",
+                TimeFromTo = "TimeFromTo",
+                Place = "Place",
+                Note = "Note"
             };
             Events.Add(evn);
+
+            Event lele = new Event() {
+                Name = "Name 2",
+                TimeRemaining = "TimeRemaining 2",
+                Date = "Date 2",
+                TimeFromTo = "TimeFromTo 2",
+                Place = "Place 2",
+                Note = "Note 2"
+            };
+            Events.Add(lele);
 
             // bind to listview
             EventsListView.ItemsSource = Events;
