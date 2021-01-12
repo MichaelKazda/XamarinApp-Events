@@ -16,11 +16,11 @@ namespace EventsApp.Pages {
         }
 
         private void GetImageButton_Clicked(object sender, EventArgs e) {
-            CrossToastPopUp.Current.ShowToastMessage("Image from gallery action");
+            CrossToastPopUp.Current.ShowToastMessage("Choose background image");
         }
 
         private void AddEventButton_Clicked(object sender, EventArgs e) {
-            CrossToastPopUp.Current.ShowToastMessage("Event added");
+            CrossToastPopUp.Current.ShowToastMessage("Add event button clicked");
         }
     }
 }

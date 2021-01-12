@@ -13,7 +13,7 @@ namespace EventsApp.Pages {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventsPage : ContentPage {
 
-        public Event EventViewModel { get; private set; }
+        public ObservableCollection<Event> Events { get; set; }
 
         public EventsPage() {
             InitializeComponent();
@@ -21,16 +21,17 @@ namespace EventsApp.Pages {
             // remove nav bar
             NavigationPage.SetHasNavigationBar(this, false);
 
-            // this 
-            EventViewModel = new Event();
-            BindingContext = EventViewModel;
+            // set events collection
+            Events = new ObservableCollection<Event>();
 
-            ObservableCollection<Event> events = new ObservableCollection<Event>();
+            // add testing event
             Event evn = new Event() {
                 Name = "neco"       
             };
-            events.Add(evn);
-            EventsListView.ItemsSource = events;
+            Events.Add(evn);
+
+            // bind to listview
+            EventsListView.ItemsSource = Events;
 
         }
 
