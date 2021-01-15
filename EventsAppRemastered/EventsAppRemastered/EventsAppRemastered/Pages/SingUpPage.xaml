@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventsAppRemastered.Pages.SingUpPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame 
+                    BackgroundColor="{StaticResource PurpleColor}" 
+                    HeightRequest="120" 
+                    CornerRadius="80" 
+                    Margin="-24">
+                    <StackLayout>
+
+                        <Label 
+                            Text="We present you" 
+                            FontFamily="{StaticResource DroidSansMono}" 
+                            TextColor="white" 
+                            VerticalOptions="StartAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                            FontAttributes="Bold"
+                            FontSize="32" 
+                            Margin="0,16,0,0"/>
+
+                        <StackLayout 
+                            Orientation="Horizontal"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,-128,0,0">
+
+                            <Label 
+                                Text="the" 
+                                TextColor="{StaticResource WhiteColor}" 
+                                FontFamily="{StaticResource DroidSansMono}" 
+                                FontSize="24"/>
+
+                            <Label 
+                                Text="EventsApp" 
+                                TextColor="white"
+                                FontAttributes="Bold"
+                                FontFamily="{StaticResource DroidSansMono}" 
+                                FontSize="40"
+                                Margin="0,0,0,-48" TextDecorations="Underline"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand">
+
+                <Label 
+                    Text="Just Log in!" 
+                    FontFamily="{StaticResource DroidSansMono}" 
+                    FontSize="32" TextColor="{StaticResource BlackColor}" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"/>
+
+                <Button 
+                    Clicked="SingUpButton_Clicked" 
+                    Text="Sing Up with Google" 
+                    Padding="16"
+                    HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
