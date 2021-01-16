@@ -5,7 +5,7 @@ namespace EventsApp.Database {
     public class Event {
 
         [PrimaryKey, AutoIncrement] public int ID { get; set; }
-        public string Name { get; set; }
+        [NotNull] public string Name { get; set; }
         public string Note { get; set; }
         public string Place { get; set; }
         public string Date { get; set; }

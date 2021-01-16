@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventsAppRemastered.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,17 @@ using Xamarin.Forms.Xaml;
 namespace EventsAppRemastered.Pages {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SingUpPage : ContentPage {
-        public SingUpPage() {
+
+        public static EventDB EventDatabase;
+
+        public SingUpPage(EventDB _EventDatabase) {
             InitializeComponent();
+
+            EventDatabase = _EventDatabase;
         }
 
         private void SingUpButton_Clicked(object sender, EventArgs e) {
-            NavigationPage page = new NavigationPage(new EventsPage()) {
+            NavigationPage page = new NavigationPage(new EventsPage(EventDatabase)) {
                 HeightRequest = 500,
                 BarTextColor = Color.FromHex("#ffffff"),
                 BarBackgroundColor = Color.FromHex("#4a2ca8"),

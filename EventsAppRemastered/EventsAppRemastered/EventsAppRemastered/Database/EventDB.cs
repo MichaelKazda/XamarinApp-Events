@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EventsAppRemastered.Database {
-    class EventDB {
+    public class EventDB {
         readonly SQLiteAsyncConnection _DB;
 
         public EventDB(string dbPath) {
@@ -31,6 +31,10 @@ namespace EventsAppRemastered.Database {
 
         public async void DeleteEventAsync(Event note) {
             int deletedRows = await _DB.DeleteAsync(note);
+        }
+
+        public async void DeleteEventsAsync() {
+            int deletedRows = await _DB.DeleteAllAsync<Event>();
         }
     }
 }
