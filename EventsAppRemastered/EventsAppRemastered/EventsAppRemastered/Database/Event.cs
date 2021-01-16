@@ -1,5 +1,6 @@
 ﻿using SQLite;
 using System;
+using System.Drawing;
 
 namespace EventsApp.Database {
     public class Event {
@@ -16,6 +17,10 @@ namespace EventsApp.Database {
         public bool YearlyRepeat { get; set; } 
 
         public string TimeToStart { get; set; }
+        public string Color { get; set; }
+
+        public string DateString { get; set; }
+        public string TimeFromToString { get; set; }
     }
 
 }

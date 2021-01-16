@@ -51,7 +51,7 @@ namespace EventsAppRemastered.Pages {
                 if (int.Parse(span.Seconds.ToString()) < -1) {
                     EventDatabase.DeleteEventAsync(evn);
                 } else {
-                    evn.TimeToStart = $"Days: {span.Days} Hours: {span.Hours} Minutes: {span.Minutes} Seconds: {span.Seconds}";
+                    evn.TimeToStart = $"{span.Days} Days {span.Hours} Hours {span.Minutes} Minutes {span.Seconds} Seconds";
                 }
             }
             EventsListView.ItemsSource = result;

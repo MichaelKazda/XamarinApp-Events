@@ -107,17 +107,29 @@
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event background -->
-                    <Label 
-                        Text="Event background" 
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label 
+                        Text="Event background: " 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"
                         Margin="0,18,0,0"
                         HorizontalTextAlignment="Center"/>
-                    <Button
-                        Clicked="GetImageButton_Clicked"
-                        Text="Pick from gallery" 
-                        HorizontalOptions="CenterAndExpand"/>
-
+                        
+                        <Picker x:Name="ColorPicker" WidthRequest="100"
+                        HorizontalOptions="StartAndExpand">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Purple</x:String>
+                                    <x:String>DarkGreen</x:String>
+                                    <x:String>DarkBlue</x:String>
+                                    <x:String>DarkRed</x:String>
+                                    <x:String>Black</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                    
                 </StackLayout>
 
                 <!-- FAB -->

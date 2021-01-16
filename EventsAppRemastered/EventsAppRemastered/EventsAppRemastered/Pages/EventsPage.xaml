@@ -52,7 +52,7 @@
                                 <ViewCell>
                                     <Grid Margin="4,12,4,0">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="40"/>
                                             <RowDefinition Height="20"/>
                                             <RowDefinition Height="50"/>
                                             <RowDefinition Height="20"/>
@@ -68,21 +68,29 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Frame Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5"
-                                               BackgroundColor="{StaticResource PurpleColor}" 
-                                               CornerRadius="15" Margin="16,10,16,10"/>
+                                               BackgroundColor="{Binding Color}" 
+                                               CornerRadius="15" Margin="8,5,8,5"/>
 
-                                        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
                                                HorizontalOptions="Center" VerticalOptions="Center"
-                                               Text="{Binding Name}" 
-                                               FontSize="18" TextColor="{StaticResource WhiteColor}"/>
+                                               Text="{Binding Name}" Margin="0,8,0,0"
+                                               FontSize="28" TextColor="{StaticResource WhiteColor}"/>
 
-                                        <Label Grid.Row="2" Grid.Column="2"
-                                               HorizontalOptions="Center"
-                                            Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" Margin="16,0,0,0"
+                                               Text="{Binding DateString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" Margin="16,-8,0,0"
+                                               Text="{Binding TimeFromToString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start"
+                                               Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
 
                                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
-                                               HorizontalOptions="CenterAndExpand" FontSize="14"
-                                            Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
+                                               HorizontalOptions="CenterAndExpand" FontSize="18"
+                                               Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
 
                                     </Grid>
                                 </ViewCell>

@@ -20,10 +20,6 @@ namespace EventsAppRemastered.Pages {
             DatePicker.MinimumDate = minDate;
         }
 
-        private void GetImageButton_Clicked(object sender, EventArgs e) {
-            Toaster.Toast("Choose background image");
-        }
-
         private void AddEventButton_Clicked(object sender, EventArgs e) {
             ConstructEvent();
         }
@@ -35,13 +31,31 @@ namespace EventsAppRemastered.Pages {
         private void ConstructEvent() {
             if (NameLabel.Text != null && DatePicker.Date != null && TimePickerFrom.Time != null && TimePickerTo.Time != null) {
 
+                DateTime date = DatePicker.Date;
+                TimeSpan timeFrom = TimePickerFrom.Time;
+                TimeSpan timeTo = TimePickerTo.Time;
+
+                string timeFromMinutesString = timeFrom.Minutes.ToString();
+                string timeToMinutesString = timeTo.Minutes.ToString();
+
+                if (timeFromMinutesString == "0")
+                    timeFromMinutesString += "0";
+
+                if (timeToMinutesString == "0")
+                    timeToMinutesString += "0";
+
+                string timeFromToString = $"{timeFrom.Hours}:{timeFromMinutesString} - {timeTo.Hours}:{timeToMinutesString}";
+
+
                 // mandatory inputs
                 Event evn = new Event() { 
                     Name = NameLabel.Text.ToString(),
-                    Date = DatePicker.Date,
+                    Date = date,
                     TimeFrom = TimePickerFrom.Time,
-                    TimeTo = TimePickerTo.Time
-                };
+                    TimeTo = TimePickerTo.Time,
+                    DateString = $"{date.Day}.{date.Month}.{date.Year}",
+                    TimeFromToString = 
+            };
 
                 // event start
                 evn.EventStartDate = DatePicker.Date.Add(TimePickerFrom.Time);
@@ -57,6 +71,17 @@ namespace EventsAppRemastered.Pages {
 
                 if (PlaceLabel.Text != null)
                     evn.Place = PlaceLabel.Text.ToString();
+
+                if (ColorPicker.ToString() != "") {
+                    if (ColorPicker.Title.ToString() == "Purple") {
+                        evn.Color = "#4a2ca8";
+                    } else {
+                        evn.Color = ColorPicker.Title.ToString();
+                    }
+                } else {
+                    evn.Color = "#4a2ca8";
+                }
+                    
 
                 CreateEvent(evn);
                 Toaster.Toast("Event created");
