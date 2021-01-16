@@ -47,7 +47,7 @@ namespace EventsAppRemastered.Pages {
         public async void SaveEventToDatabase(Event evn) {
             await EventDatabase.SaveEventAsync(evn);
 
-            // test
+            // test 
             LoadEvents();
         }
 

@@ -16,11 +16,17 @@ namespace EventsAppRemastered.Pages {
 
         public SingUpPage(EventDB _EventDatabase) {
             InitializeComponent();
-
             EventDatabase = _EventDatabase;
+
+
+
         }
 
         private void SingUpButton_Clicked(object sender, EventArgs e) {
+            GoToMainPage();
+        }
+
+        private void GoToMainPage() {
             NavigationPage page = new NavigationPage(new EventsPage(EventDatabase)) {
                 HeightRequest = 500,
                 BarTextColor = Color.FromHex("#ffffff"),
@@ -30,5 +36,6 @@ namespace EventsAppRemastered.Pages {
             };
             App.Current.MainPage = page;
         }
+
     }
 }
