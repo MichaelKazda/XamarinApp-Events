@@ -34,7 +34,7 @@ namespace EventsAppRemastered.Pages {
         public ObservableCollection<Event> Events { get; }
 
         private void AddEventButton_Clicked(object sender, EventArgs e) {
-            Navigation.PushAsync(new AddEventPage());
+            Navigation.PushAsync(new AddEventPage(EventDatabase));
         }
 
         public async void SaveEventToDatabase(Event evn) {
