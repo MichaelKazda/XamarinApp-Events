@@ -15,10 +15,13 @@ namespace EventsAppRemastered.Pages {
     public partial class EventsPage : ContentPage {
 
         public static EventDB EventDatabase;
+        public static List<Event> eventCache;
 
         public EventsPage(EventDB _EventDatabase) {
             InitializeComponent();
             EventDatabase = _EventDatabase;
+
+            //EventDatabase.DeleteEventsAsync();
 
             // remove nav bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -44,17 +47,17 @@ namespace EventsAppRemastered.Pages {
         }
 
         public async void LoadEvents() {
-            var result = await EventDatabase.GetEventsAsync();
-            foreach (Event evn in result) {
+            var eventCache = await EventDatabase.GetEventsAsync();
+            foreach (Event evn in eventCache) {
                 TimeSpan span = evn.EventStartDate.Subtract(DateTime.Now);
-
-                if (int.Parse(span.Seconds.ToString()) < -1) {
+               
+                if (span.Minutes < 0) {
                     EventDatabase.DeleteEventAsync(evn);
                 } else {
                     evn.TimeToStart = $"{span.Days} Days {span.Hours} Hours {span.Minutes} Minutes {span.Seconds} Seconds";
                 }
             }
-            EventsListView.ItemsSource = result;
+            EventsListView.ItemsSource = eventCache;
         }
 
         public void DeleteEvents() {

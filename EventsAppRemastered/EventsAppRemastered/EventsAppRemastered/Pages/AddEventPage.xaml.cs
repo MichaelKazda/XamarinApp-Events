@@ -35,26 +35,22 @@ namespace EventsAppRemastered.Pages {
                 TimeSpan timeFrom = TimePickerFrom.Time;
                 TimeSpan timeTo = TimePickerTo.Time;
 
-                string timeFromMinutesString = timeFrom.Minutes.ToString();
-                string timeToMinutesString = timeTo.Minutes.ToString();
+                string timeFromMinutes = timeFrom.Minutes.ToString();
+                if (timeFromMinutes.Length == 1)
+                    timeFromMinutes += "0";
 
-                if (timeFromMinutesString == "0")
-                    timeFromMinutesString += "0";
-
-                if (timeToMinutesString == "0")
-                    timeToMinutesString += "0";
-
-                string timeFromToString = $"{timeFrom.Hours}:{timeFromMinutesString} - {timeTo.Hours}:{timeToMinutesString}";
-
+                string timeToMinutes = timeTo.Minutes.ToString();
+                if (timeToMinutes.Length == 1)
+                    timeToMinutes += "0";
 
                 // mandatory inputs
-                Event evn = new Event() { 
+                Event evn = new Event() {
                     Name = NameLabel.Text.ToString(),
                     Date = date,
-                    TimeFrom = TimePickerFrom.Time,
-                    TimeTo = TimePickerTo.Time,
+                    TimeFrom = timeFrom,
+                    TimeTo = timeTo,
                     DateString = $"{date.Day}.{date.Month}.{date.Year}",
-                    TimeFromToString = 
+                    TimeFromToString = $"{timeFrom.Hours}:{timeFromMinutes} - {timeTo.Hours}:{timeToMinutes}"
             };
 
                 // event start
@@ -72,11 +68,11 @@ namespace EventsAppRemastered.Pages {
                 if (PlaceLabel.Text != null)
                     evn.Place = PlaceLabel.Text.ToString();
 
-                if (ColorPicker.ToString() != "") {
-                    if (ColorPicker.Title.ToString() == "Purple") {
+                if (ColorPicker.SelectedItem != null) {
+                    if (ColorPicker.SelectedItem.ToString() == "Purple") {
                         evn.Color = "#4a2ca8";
                     } else {
-                        evn.Color = ColorPicker.Title.ToString();
+                        evn.Color = ColorPicker.SelectedItem.ToString();
                     }
                 } else {
                     evn.Color = "#4a2ca8";
@@ -85,6 +81,7 @@ namespace EventsAppRemastered.Pages {
 
                 CreateEvent(evn);
                 Toaster.Toast("Event created");
+                Navigation.PopAsync();
             } else {
                 Toaster.Toast("You must fill mandatory fields");
             }

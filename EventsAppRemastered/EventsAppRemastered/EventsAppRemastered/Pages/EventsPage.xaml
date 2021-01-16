@@ -84,12 +84,12 @@
                                                HorizontalOptions="Start" Margin="16,-8,0,0"
                                                Text="{Binding TimeFromToString}" TextColor="{StaticResource WhiteColor}"/>
 
-                                        <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"
-                                               HorizontalOptions="Start"
+                                        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
+                                               HorizontalOptions="EndAndExpand" Margin="0,0,16,0"
                                                Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
 
                                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
-                                               HorizontalOptions="CenterAndExpand" FontSize="18"
+                                               HorizontalOptions="CenterAndExpand" FontSize="16"
                                                Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
 
                                     </Grid>
@@ -97,24 +97,6 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-
-                    <!--
-                        <Frame
-                            BackgroundColor="{StaticResource PurpleColor}" 
-                            CornerRadius="15"
-                            Margin="16,10,16,10">
-                        <StackLayout HorizontalOptions="CenterAndExpand">
-                        <Label Text="dwdwq" FontSize="30" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                        <Label Text="{Binding TimeRemaining}" FontSize="24" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}"/>
-                    </StackLayout>
-                                    
-
-                                           
-                        </Frame>-->
 
                 </ScrollView>
 
@@ -128,6 +110,8 @@
                 BackgroundColor="{StaticResource PurpleColor}"
                 AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                BorderColor="{StaticResource GrayColor}"
+                BorderWidth="1"
                 CornerRadius="40"
                 HeightRequest="65"
                 WidthRequest="65"

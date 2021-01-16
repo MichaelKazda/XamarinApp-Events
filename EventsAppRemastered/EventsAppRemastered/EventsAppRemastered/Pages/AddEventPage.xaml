@@ -116,7 +116,7 @@
                         Margin="0,18,0,0"
                         HorizontalTextAlignment="Center"/>
                         
-                        <Picker x:Name="ColorPicker" WidthRequest="100"
+                        <Picker x:Name="ColorPicker" WidthRequest="165" Title="Select background"
                         HorizontalOptions="StartAndExpand">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
@@ -140,6 +140,8 @@
                     BackgroundColor="{StaticResource PurpleColor}"
                     AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BorderColor="{StaticResource GrayColor}"
+                    BorderWidth="1"
                     CornerRadius="40"
                     HeightRequest="65"
                     WidthRequest="65"
