@@ -14,6 +14,7 @@
         </Style>
 
         <Color x:Key="WhiteColor">#fff</Color>
+        <Color x:Key="GrayColor">#ccc</Color>
         <Color x:Key="BlackColor">#000</Color>
         <Color x:Key="PurpleColor">#4a2ca8</Color>
         

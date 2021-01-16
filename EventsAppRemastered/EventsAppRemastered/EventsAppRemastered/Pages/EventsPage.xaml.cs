@@ -27,8 +27,7 @@ namespace EventsAppRemastered.Pages {
             Task.Run(() => WatchEvents());
 
 
-            // code to calculate time to event start
-            //TimeSpan span = eventStartDate.Subtract(DateTime.Now);
+            
         }
 
         private void AddEventButton_Clicked(object sender, EventArgs e) {
@@ -48,6 +47,10 @@ namespace EventsAppRemastered.Pages {
 
         public async void LoadEvents() {
             var result = await EventDatabase.GetEventsAsync();
+            foreach (Event evn in result) {
+                TimeSpan span = evn.EventStartDate.Subtract(DateTime.Now);
+                evn.TimeToStart = $"Days: {span.Days} Hours: {span.Hours} Minutes: {span.Minutes} Seconds: {span.Seconds}";
+            }
             EventsListView.ItemsSource = result;
         }
 

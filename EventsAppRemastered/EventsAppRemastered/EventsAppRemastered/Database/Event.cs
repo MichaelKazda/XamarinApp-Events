@@ -14,6 +14,8 @@ namespace EventsApp.Database {
         public TimeSpan TimeTo { get; set; }
         public string YearlyCounter { get; set; }
         public bool YearlyRepeat { get; set; } 
+
+        public string TimeToStart { get; set; }
     }
 
 }

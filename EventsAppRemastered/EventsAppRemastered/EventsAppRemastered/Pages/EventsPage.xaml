@@ -46,18 +46,45 @@
                 <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" x:Name="Neco">
 
                     <!-- use this template in viewcell -->
-                    <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}">
+                    <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell Height="400">
-                                    <StackLayout HeightRequest="400">
-                                        <Label Text="{Binding Name}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding TimeRemaining}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                    </StackLayout>
+                                <ViewCell>
+                                    <Grid Margin="4,12,4,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="50"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5"
+                                               BackgroundColor="{StaticResource PurpleColor}" 
+                                               CornerRadius="15" Margin="16,10,16,10"/>
+
+                                        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                                               HorizontalOptions="Center" VerticalOptions="Center"
+                                               Text="{Binding Name}" 
+                                               FontSize="18" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="2"
+                                               HorizontalOptions="Center"
+                                            Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
+                                               HorizontalOptions="CenterAndExpand" FontSize="14"
+                                            Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
+
+                                    </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
