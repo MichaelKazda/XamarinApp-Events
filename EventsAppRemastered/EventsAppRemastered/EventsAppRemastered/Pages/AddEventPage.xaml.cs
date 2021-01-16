@@ -28,7 +28,7 @@ namespace EventsAppRemastered.Pages {
             ConstructEvent();
         }
 
-        private async void SaveEvent(Event evn) {
+        private async void CreateEvent(Event evn) {
             await EventDatabase.SaveEventAsync(evn);
         }
 
@@ -58,7 +58,7 @@ namespace EventsAppRemastered.Pages {
                 if (PlaceLabel.Text != null)
                     evn.Place = PlaceLabel.Text.ToString();
 
-                SaveEvent(evn);
+                CreateEvent(evn);
                 Toaster.Toast("Event created");
             } else {
                 Toaster.Toast("You must fill mandatory fields");
