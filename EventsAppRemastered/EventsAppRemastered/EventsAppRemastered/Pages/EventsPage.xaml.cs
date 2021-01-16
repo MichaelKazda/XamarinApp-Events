@@ -25,17 +25,10 @@ namespace EventsAppRemastered.Pages {
 
             EventDatabase.DeleteEventsAsync();
 
-            int x = 1;
-            Event evn = new Event() {
-                Name = $"Name {x}",
-                TimeRemaining = $"TimeRemaining {x}",
-                Date = $"Date {x}",
-                TimeFromTo = $"TimeFromTo {x}",
-                Place = $"Place {x}",
-                Note = $"Note {x}"
-            };
 
-            SaveEventToDatabase(evn);
+            LoadEvents();
+
+            //TimeSpan span = eventStartDate.Subtract(DateTime.Now);
         }
 
         public ObservableCollection<Event> Events { get; }
@@ -46,9 +39,6 @@ namespace EventsAppRemastered.Pages {
 
         public async void SaveEventToDatabase(Event evn) {
             await EventDatabase.SaveEventAsync(evn);
-
-            // test 
-            LoadEvents();
         }
 
         public async void LoadEvents() {

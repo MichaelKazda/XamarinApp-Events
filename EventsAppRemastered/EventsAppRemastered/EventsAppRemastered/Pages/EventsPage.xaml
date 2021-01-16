@@ -35,9 +35,9 @@
                             HorizontalOptions="CenterAndExpand">
 
                             <Label Text="Today" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="Next week" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
+                            <Label Text="Next week" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" />
                             <Label Text="Next month" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="All time" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
+                            <Label Text="All time" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>

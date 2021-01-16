@@ -18,8 +18,6 @@ namespace EventsAppRemastered.Pages {
             InitializeComponent();
             EventDatabase = _EventDatabase;
 
-
-
         }
 
         private void SingUpButton_Clicked(object sender, EventArgs e) {
