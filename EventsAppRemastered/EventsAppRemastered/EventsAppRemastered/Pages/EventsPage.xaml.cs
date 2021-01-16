@@ -25,8 +25,6 @@ namespace EventsAppRemastered.Pages {
 
             // run events update watcher
             Task.Run(() => WatchEvents());
-
-
             
         }
 
@@ -49,7 +47,12 @@ namespace EventsAppRemastered.Pages {
             var result = await EventDatabase.GetEventsAsync();
             foreach (Event evn in result) {
                 TimeSpan span = evn.EventStartDate.Subtract(DateTime.Now);
-                evn.TimeToStart = $"Days: {span.Days} Hours: {span.Hours} Minutes: {span.Minutes} Seconds: {span.Seconds}";
+
+                if (int.Parse(span.Seconds.ToString()) < -1) {
+                    EventDatabase.DeleteEventAsync(evn);
+                } else {
+                    evn.TimeToStart = $"Days: {span.Days} Hours: {span.Hours} Minutes: {span.Minutes} Seconds: {span.Seconds}";
+                }
             }
             EventsListView.ItemsSource = result;
         }
