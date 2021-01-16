@@ -1,7 +1,10 @@
-﻿using System;
+﻿using SQLite;
+using System;
+
 namespace EventsApp.Database {
     public class Event {
 
+        [PrimaryKey, AutoIncrement] public int ID { get; set; }
         public string Name { get; set; }
         public string Note { get; set; }
         public string Place { get; set; }
@@ -16,18 +19,8 @@ namespace EventsApp.Database {
 
         public bool YearlyRepeat { get; set; }
 
-        public Event() {
-            SetTimeFromTo();
-            SetTimeRemaining();
-        }
-
-        public void SetTimeFromTo() {
-
-        }
-
-        public void SetTimeRemaining() {
-
-        }
-
+        
     }
+
 }
+
