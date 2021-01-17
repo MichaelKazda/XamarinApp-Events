@@ -22,11 +22,11 @@
                 <StackLayout Orientation="Vertical" Margin="15">
 
                     <!-- Event name -->
-                    <Label 
-                        Text="What's happening?" 
+                    <Label
+                        Text="What's happening? *" 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"/>
-                    <Entry 
+                    <Entry x:Name="NameLabel"
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event description -->
@@ -34,15 +34,15 @@
                         Text="Something to note?" 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"/>
-                    <Entry 
+                    <Entry x:Name="NoteLabel" 
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event date -->
                     <Label 
-                        Text="When?"
+                        Text="When? *"
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"/>
-                    <DatePicker 
+                    <DatePicker x:Name="DatePicker" 
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event time from - to  -->
@@ -56,10 +56,10 @@
                             Grid.Column="0">
 
                             <Label 
-                                Text="From" 
+                                Text="From *" 
                                 TextColor="{StaticResource BlackColor}" 
                                 FontSize="18"/>
-                            <TimePicker 
+                            <TimePicker x:Name="TimePickerFrom"
                                 TextColor="{StaticResource BlackColor}"/>
                         </StackLayout>
 
@@ -70,10 +70,10 @@
                             Grid.Column="1">
 
                             <Label 
-                                Text="To" 
+                                Text="To *" 
                                 TextColor="{StaticResource BlackColor}" 
                                 FontSize="18"/>
-                            <TimePicker 
+                            <TimePicker x:Name="TimePickerTo"
                                 TextColor="{StaticResource BlackColor}"/>
                         </StackLayout>
 
@@ -84,7 +84,7 @@
                         Text="Years counter (how old, year of anniv)" 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"/>
-                    <Entry 
+                    <Entry x:Name="YearsCounterLabel" Keyboard="Numeric"
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event repetition -->
@@ -95,7 +95,7 @@
                             Text="Repeat yearly?" 
                             TextColor="{StaticResource BlackColor}" 
                             FontSize="18"/>
-                        <Switch/>
+                        <Switch x:Name="RepeatSwitch"/>
                     </StackLayout>
 
                     <!-- Event place -->
@@ -103,21 +103,33 @@
                         Text="Where?" 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"/>
-                    <Entry 
+                    <Entry x:Name="PlaceLabel"
                         TextColor="{StaticResource BlackColor}"/>
 
                     <!-- Event background -->
-                    <Label 
-                        Text="Event background" 
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label 
+                        Text="Event background: " 
                         TextColor="{StaticResource BlackColor}" 
                         FontSize="18"
                         Margin="0,18,0,0"
                         HorizontalTextAlignment="Center"/>
-                    <Button
-                        Clicked="GetImageButton_Clicked"
-                        Text="Pick from gallery" 
-                        HorizontalOptions="CenterAndExpand"/>
-
+                        
+                        <Picker x:Name="ColorPicker" WidthRequest="165" Title="Select background"
+                        HorizontalOptions="StartAndExpand">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Purple</x:String>
+                                    <x:String>DarkGreen</x:String>
+                                    <x:String>DarkBlue</x:String>
+                                    <x:String>DarkRed</x:String>
+                                    <x:String>Black</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                    
                 </StackLayout>
 
                 <!-- FAB -->
@@ -128,6 +140,8 @@
                     BackgroundColor="{StaticResource PurpleColor}"
                     AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BorderColor="#2f1f4f"
+                    BorderWidth="1"
                     CornerRadius="40"
                     HeightRequest="65"
                     WidthRequest="65"

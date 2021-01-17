@@ -17,7 +17,7 @@
                         BackgroundColor="{StaticResource PurpleColor}">
 
                         <Label
-                            Margin="32,0,0,0"
+                            Margin="32,-8,0,0"
                             Text="Your Events"
                             TextColor="{StaticResource WhiteColor}"
                             HorizontalOptions="Start"
@@ -26,18 +26,31 @@
 
                     <!-- Frame with event filters -->
                     <Frame
-                        Margin="-8,-16,-8,0"
+                        Margin="-8,-20,-8,0"
                         BackgroundColor="{StaticResource PurpleColor}" 
-                        CornerRadius="70">
+                        CornerRadius="70" HeightRequest="35">
 
                         <StackLayout
                             Orientation="Horizontal"
                             HorizontalOptions="CenterAndExpand">
 
-                            <Label Text="Today" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="Next week" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
-                            <Label Text="Next month" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="All time" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
+                            <Button Text="All Time" x:Name="AllTimeBtn" Clicked="AllTimeBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25"
+                                    BorderColor="#2f1f4f"
+                                    BorderWidth="1"/>
+
+                            <Button Text="Next Week" x:Name="NextWeekBtn" Clicked="NextWeekBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+
+                            <Button Text="Next Month" x:Name="NextMonthBtn" Clicked="NextMonthBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+
+                            <Button Text="Next Year" x:Name="NextYearBtn" Clicked="NextYearBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -46,40 +59,74 @@
                 <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" x:Name="Neco">
 
                     <!-- use this template in viewcell -->
-                    <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}">
+                    <ListView x:Name="EventsListView" IsVisible="True" ItemsSource="{Binding Events}" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell Height="400">
-                                    <StackLayout HeightRequest="400">
-                                        <Label Text="{Binding Name}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding TimeRemaining}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}" Padding="8"/>
-                                    </StackLayout>
+                                <ViewCell>
+                                    <Grid Margin="4,12,4,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="50"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5"
+                                               BackgroundColor="{Binding Color}" 
+                                               CornerRadius="15" Margin="8,5,8,5"/>
+
+                                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
+                                               HorizontalOptions="Center" VerticalOptions="Center"
+                                               Text="{Binding Name}" Margin="0,8,0,0"
+                                               FontSize="28" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
+                                               HorizontalOptions="EndAndExpand" Margin="0,0,16,0"
+                                               Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
+
+                                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" Margin="16,0,0,0"
+                                               Text="{Binding DateString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" Margin="16,-8,0,0"
+                                               Text="{Binding TimeFromToString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,8,0,0"
+                                               Text="{Binding YearlyRepeatString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,24,0,0"
+                                               Text="{Binding YearlyCounterString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
+                                               HorizontalOptions="CenterAndExpand" FontSize="16"
+                                               Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Button x:Name="DeleteEventButton" Clicked="DeleteEventButton_Clicked"
+                                               WidthRequest="45" HeightRequest="45"
+                                               Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" FontSize="16"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="17,8,0,0"
+                                               Text="X" ClassId="{Binding ID}"
+                                               CornerRadius="40"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               BackgroundColor="{Binding Color}"/>
+
+                                    </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-
-                    <!--
-                        <Frame
-                            BackgroundColor="{StaticResource PurpleColor}" 
-                            CornerRadius="15"
-                            Margin="16,10,16,10">
-                        <StackLayout HorizontalOptions="CenterAndExpand">
-                        <Label Text="dwdwq" FontSize="30" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                        <Label Text="{Binding TimeRemaining}" FontSize="24" TextColor="{StaticResource BlackColor}" Padding="64,0,64,0"/>
-                        <Label Text="{Binding Date}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding TimeFromTo}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding Place}" TextColor="{StaticResource BlackColor}"/>
-                        <Label Text="{Binding Note}" TextColor="{StaticResource BlackColor}"/>
-                    </StackLayout>
-                                    
-
-                                           
-                        </Frame>-->
 
                 </ScrollView>
 
@@ -93,6 +140,8 @@
                 BackgroundColor="{StaticResource PurpleColor}"
                 AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                BorderColor="#2f1f4f"
+                BorderWidth="1"
                 CornerRadius="40"
                 HeightRequest="65"
                 WidthRequest="65"

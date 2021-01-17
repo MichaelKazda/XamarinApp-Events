@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EventsAppRemastered.Database {
-    class EventDB {
+    public class EventDB {
         readonly SQLiteAsyncConnection _DB;
 
         public EventDB(string dbPath) {
@@ -14,28 +14,32 @@ namespace EventsAppRemastered.Database {
             _DB.CreateTableAsync<Event>().Wait();
         }
 
-        public async Task<List<Event>> GetNotesAsync() {
+        public async Task<List<Event>> GetEventsAsync() {
             return await _DB.Table<Event>().ToListAsync();
         }
 
-        public Task<Event> GetNoteAsync(int id) {
+        public Task<Event> GetEventAsync(int id) {
             return _DB.Table<Event>()
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
         }
 
-        public async Task<int> SaveNoteAsync(Event note) {
+        public async Task<int> SaveEventAsync(Event note) {
             int insertedRows = await _DB.InsertAsync(note);
             return insertedRows;
         }
 
-        public async Task EditNoteAsync(int id, string label, string text) {
-            Event note = await GetNoteAsync(id);
-
+        public async void DeleteEventAsync(Event note) {
+            int deletedRows = await _DB.DeleteAsync(note);
         }
 
-        public async void DeleteNoteAsync(Event note) {
-            int deletedRows = await _DB.DeleteAsync(note);
+        public async void DeleteEventByID(int ID) {
+            Event evn = await GetEventAsync(ID);
+            DeleteEventAsync(evn);
+        }
+
+        public async void DeleteEventsAsync() {
+            int deletedRows = await _DB.DeleteAllAsync<Event>();
         }
     }
 }
