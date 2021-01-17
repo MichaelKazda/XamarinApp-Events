@@ -52,7 +52,7 @@
                                 <ViewCell>
                                     <Grid Margin="4,12,4,0">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="50"/>
                                             <RowDefinition Height="20"/>
                                             <RowDefinition Height="50"/>
                                             <RowDefinition Height="20"/>
@@ -76,6 +76,10 @@
                                                Text="{Binding Name}" Margin="0,8,0,0"
                                                FontSize="28" TextColor="{StaticResource WhiteColor}"/>
 
+                                        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
+                                               HorizontalOptions="EndAndExpand" Margin="0,0,16,0"
+                                               Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
+
                                         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                                HorizontalOptions="Start" Margin="16,0,0,0"
                                                Text="{Binding DateString}" TextColor="{StaticResource WhiteColor}"/>
@@ -84,9 +88,13 @@
                                                HorizontalOptions="Start" Margin="16,-8,0,0"
                                                Text="{Binding TimeFromToString}" TextColor="{StaticResource WhiteColor}"/>
 
-                                        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
-                                               HorizontalOptions="EndAndExpand" Margin="0,0,16,0"
-                                               Text="{Binding Note}" TextColor="{StaticResource GrayColor}"/>
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,8,0,0"
+                                               Text="{Binding YearlyRepeatString}" TextColor="{StaticResource WhiteColor}"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,24,0,0"
+                                               Text="{Binding YearlyCounterString}" TextColor="{StaticResource WhiteColor}"/>
 
                                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
                                                HorizontalOptions="CenterAndExpand" FontSize="18"

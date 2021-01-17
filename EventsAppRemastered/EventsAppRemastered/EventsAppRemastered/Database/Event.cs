@@ -18,6 +18,8 @@ namespace EventsApp.Database {
 
         public string TimeToStart { get; set; }
         public string Color { get; set; }
+        public string YearlyRepeatString { get; set; }
+        public string YearlyCounterString { get; set; }
 
         public string DateString { get; set; }
         public string TimeFromToString { get; set; }

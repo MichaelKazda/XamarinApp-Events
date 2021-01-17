@@ -62,7 +62,13 @@ namespace EventsAppRemastered.Pages {
 
                 if (YearsCounterLabel.Text != null) {
                     evn.YearlyCounter = YearsCounterLabel.Text.ToString();
+                    evn.YearlyCounterString = $"{YearsCounterLabel.Text} anniversary";
+                }
+
+                if (YearsCounterLabel.Text != null) {
                     evn.YearlyRepeat = RepeatSwitch.IsToggled;
+                    if (RepeatSwitch.IsToggled)
+                        evn.YearlyRepeatString = "Yearly repeat: yes";
                 }    
 
                 if (PlaceLabel.Text != null)
