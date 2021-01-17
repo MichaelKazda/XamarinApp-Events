@@ -17,6 +17,7 @@ namespace EventsAppRemastered.Pages {
 
         public static EventDB EventDatabase;
         public static List<Event> eventCache;
+        public static string showEvents = "All Time";
 
         public EventsPage(EventDB _EventDatabase) {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace EventsAppRemastered.Pages {
         public void WatchEvents() {
             while (true) {
                 Thread.Sleep(500);
-                Dispatcher.BeginInvokeOnMainThread(() => LoadEvents());
+                Dispatcher.BeginInvokeOnMainThread(() => LoadAllEvents());
+  
             }
         }
 
@@ -53,22 +55,41 @@ namespace EventsAppRemastered.Pages {
             await EventDatabase.SaveEventAsync(evn);
         }
 
-        public async void LoadEvents() {
-            var eventCache = await EventDatabase.GetEventsAsync();
-            foreach (Event evn in eventCache) {
-                TimeSpan span = evn.EventStartDate.Subtract(DateTime.Now);
-               
+        public async void LoadAllEvents() {
+            List<Event> newList = new List<Event>();
+            if (showEvents == "All Time") {
+                newList = await EventDatabase.GetEventsAsync();
+            } else {
+                eventCache = await EventDatabase.GetEventsAsync();
+                DateTime nowPlusSpan = new DateTime();
+
+                if (showEvents == "Next Week") {
+                    nowPlusSpan = DateTime.Now.AddDays(7);
+                } else if (showEvents == "Next Month") {
+                    nowPlusSpan = DateTime.Now.AddMonths(1);
+                } else if (showEvents == "Next Year") {
+                    nowPlusSpan = DateTime.Now.AddYears(1);
+                }
+                var nowPlusStamp = nowPlusSpan.ToFileTime();
+                foreach (Event evn in eventCache) {
+                    var eventStartDateStamp = evn.EventStartDate.ToFileTime();       
+                    if (nowPlusStamp - eventStartDateStamp > 0)
+                        newList.Add(evn);
+                }
+            }
+
+            foreach (Event evn in newList) {
+                TimeSpan span = evn.EventStartDate.Subtract(DateTime.Now);   
                 if (span.Seconds < 0) {
                     if (evn.YearlyRepeat)
                         CreateNewEvent(evn);
 
                     EventDatabase.DeleteEventAsync(evn);
-
                 } else {
                     evn.TimeToStart = $"{span.Days} Days {span.Hours} Hours {span.Minutes} Minutes {span.Seconds} Seconds";
                 }
             }
-            EventsListView.ItemsSource = eventCache;
+            EventsListView.ItemsSource = newList;
         }
 
         public void CreateNewEvent(Event evn) {
@@ -90,5 +111,37 @@ namespace EventsAppRemastered.Pages {
             Toaster.Toast($"Event deleted");
         }
 
+        private void AllTimeBtnClicked(object sender, EventArgs e) {
+            showEvents = "All Time";
+            AllTimeBtn.BorderColor = Color.FromHex("#2f1f4f");
+            NextWeekBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextMonthBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextYearBtn.BorderColor = Color.FromHex("#4a2ca8");
+
+        }
+
+        private void NextWeekBtnClicked(object sender, EventArgs e) {
+            showEvents = "Next Week";
+            AllTimeBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextWeekBtn.BorderColor = Color.FromHex("#2f1f4f");
+            NextMonthBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextYearBtn.BorderColor = Color.FromHex("#4a2ca8");
+        }
+
+        private void NextMonthBtnClicked(object sender, EventArgs e) {
+            showEvents = "Next Month";
+            AllTimeBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextWeekBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextMonthBtn.BorderColor = Color.FromHex("#2f1f4f");
+            NextYearBtn.BorderColor = Color.FromHex("#4a2ca8");
+        }
+
+        private void NextYearBtnClicked(object sender, EventArgs e) {
+            showEvents = "Next Year";
+            AllTimeBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextWeekBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextMonthBtn.BorderColor = Color.FromHex("#4a2ca8");
+            NextYearBtn.BorderColor = Color.FromHex("#2f1f4f");
+        }
     }
 }

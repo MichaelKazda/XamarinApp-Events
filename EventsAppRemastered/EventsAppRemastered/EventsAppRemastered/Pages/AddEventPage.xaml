@@ -140,7 +140,7 @@
                     BackgroundColor="{StaticResource PurpleColor}"
                     AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
-                    BorderColor="{StaticResource GrayColor}"
+                    BorderColor="#2f1f4f"
                     BorderWidth="1"
                     CornerRadius="40"
                     HeightRequest="65"

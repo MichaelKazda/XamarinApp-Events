@@ -17,7 +17,7 @@
                         BackgroundColor="{StaticResource PurpleColor}">
 
                         <Label
-                            Margin="32,0,0,0"
+                            Margin="32,-8,0,0"
                             Text="Your Events"
                             TextColor="{StaticResource WhiteColor}"
                             HorizontalOptions="Start"
@@ -26,18 +26,31 @@
 
                     <!-- Frame with event filters -->
                     <Frame
-                        Margin="-8,-16,-8,0"
+                        Margin="-8,-20,-8,0"
                         BackgroundColor="{StaticResource PurpleColor}" 
-                        CornerRadius="70">
+                        CornerRadius="70" HeightRequest="35">
 
                         <StackLayout
                             Orientation="Horizontal"
                             HorizontalOptions="CenterAndExpand">
 
-                            <Label Text="Today" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="Next week" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" />
-                            <Label Text="Next month" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}"/>
-                            <Label Text="All time" Margin="16,0,16,0" TextColor="{StaticResource WhiteColor}" TextDecorations="Underline"/>
+                            <Button Text="All Time" x:Name="AllTimeBtn" Clicked="AllTimeBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25"
+                                    BorderColor="#2f1f4f"
+                                    BorderWidth="1"/>
+
+                            <Button Text="Next Week" x:Name="NextWeekBtn" Clicked="NextWeekBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+
+                            <Button Text="Next Month" x:Name="NextMonthBtn" Clicked="NextMonthBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+
+                            <Button Text="Next Year" x:Name="NextYearBtn" Clicked="NextYearBtnClicked"
+                                    TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
+                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -97,7 +110,7 @@
                                                Text="{Binding YearlyCounterString}" TextColor="{StaticResource WhiteColor}"/>
 
                                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
-                                               HorizontalOptions="CenterAndExpand" FontSize="18"
+                                               HorizontalOptions="CenterAndExpand" FontSize="16"
                                                Text="{Binding TimeToStart}" TextColor="{StaticResource WhiteColor}"/>
 
                                         <Button x:Name="DeleteEventButton" Clicked="DeleteEventButton_Clicked"
@@ -127,7 +140,7 @@
                 BackgroundColor="{StaticResource PurpleColor}"
                 AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                BorderColor="{StaticResource GrayColor}"
+                BorderColor="#2f1f4f"
                 BorderWidth="1"
                 CornerRadius="40"
                 HeightRequest="65"
