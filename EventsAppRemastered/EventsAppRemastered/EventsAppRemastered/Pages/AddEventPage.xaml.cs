@@ -69,7 +69,7 @@ namespace EventsAppRemastered.Pages {
                 if (YearsCounterLabel.Text != null) {
                     evn.YearlyRepeat = RepeatSwitch.IsToggled;
                     if (RepeatSwitch.IsToggled)
-                        evn.YearlyRepeatString = "Yearly repeat: yes";
+                        evn.YearlyRepeatString = "Repeated Yearly";
                 }    
 
                 if (PlaceLabel.Text != null)

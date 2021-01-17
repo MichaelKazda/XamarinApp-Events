@@ -37,21 +37,21 @@
 
                             <Button Text="All Time" x:Name="AllTimeBtn" Clicked="AllTimeBtnClicked"
                                     TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
-                                    FontSize="12" CornerRadius="25"
+                                    FontSize="10" CornerRadius="25"
                                     BorderColor="#2f1f4f"
                                     BorderWidth="1"/>
 
                             <Button Text="Next Week" x:Name="NextWeekBtn" Clicked="NextWeekBtnClicked"
                                     TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
-                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+                                    FontSize="10" CornerRadius="25" BorderWidth="1"/>
 
                             <Button Text="Next Month" x:Name="NextMonthBtn" Clicked="NextMonthBtnClicked"
                                     TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
-                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+                                    FontSize="10" CornerRadius="25" BorderWidth="1"/>
 
                             <Button Text="Next Year" x:Name="NextYearBtn" Clicked="NextYearBtnClicked"
                                     TextColor="{StaticResource WhiteColor}" BackgroundColor="{StaticResource PurpleColor}"
-                                    FontSize="12" CornerRadius="25" BorderWidth="1"/>
+                                    FontSize="10" CornerRadius="25" BorderWidth="1"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -107,7 +107,7 @@
                                                Text="{Binding YearlyRepeatString}" TextColor="{StaticResource WhiteColor}"/>
 
                                         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
-                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,24,0,0"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="16,24,0,0" FontSize="16"
                                                Text="{Binding YearlyCounterString}" TextColor="{StaticResource WhiteColor}"/>
 
                                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
@@ -117,7 +117,7 @@
                                         <Button x:Name="DeleteEventButton" Clicked="DeleteEventButton_Clicked"
                                                WidthRequest="45" HeightRequest="45"
                                                Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" FontSize="16"
-                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="17,8,0,0"
+                                               HorizontalOptions="Start" VerticalOptions="Start" Margin="5,8,0,0"
                                                Text="X" ClassId="{Binding ID}"
                                                CornerRadius="40"
                                                TextColor="{StaticResource WhiteColor}"
