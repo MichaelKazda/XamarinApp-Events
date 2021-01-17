@@ -17,8 +17,8 @@
                         BackgroundColor="{StaticResource PurpleColor}">
 
                         <Label
-                            Margin="32,-8,0,0"
-                            Text="Your Events"
+                            Margin="10,-8,0,0"
+                            x:Name="eventsPageTitle"
                             TextColor="{StaticResource WhiteColor}"
                             HorizontalOptions="Start"
                             FontSize="24"/>

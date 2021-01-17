@@ -8,6 +8,8 @@ using Xamarin.Forms.Xaml;
 namespace EventsAppRemastered {
     public partial class App : Application {
 
+        public static string _UserName { get; set; }
+
         public App() {
             InitializeComponent();
 

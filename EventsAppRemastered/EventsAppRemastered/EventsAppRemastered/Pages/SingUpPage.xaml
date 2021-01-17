@@ -40,7 +40,8 @@
                                 FontAttributes="Bold"
                                 FontFamily="{StaticResource DroidSansMono}" 
                                 FontSize="40"
-                                Margin="0,0,0,-48" TextDecorations="Underline"/>
+                                Margin="0,0,0,-48"
+                                TextDecorations="Underline"/>
                         </StackLayout>
 
                     </StackLayout>
@@ -54,15 +55,30 @@
                 <Label 
                     Text="Just Log in!" 
                     FontFamily="{StaticResource DroidSansMono}" 
-                    FontSize="32" TextColor="{StaticResource BlackColor}" 
+                    FontSize="32" 
+                    TextColor="{StaticResource BlackColor}" 
                     FontAttributes="Bold"
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    Margin="10"/>
+
+                <Entry
+                    Placeholder="What is your name?"
+                    x:Name="userName"
+                    MaxLength="10"
+                    FontFamily="{StaticResource DroidSansMono}"
+                    TextColor="{StaticResource BlackColor}" 
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    Margin="5"/>
 
                 <Button 
                     Clicked="SingUpButton_Clicked" 
-                    Text="Sing Up with Google" 
-                    Padding="16"
-                    HorizontalOptions="CenterAndExpand"/>
+                    Text="Continue" 
+                    Padding="10"
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="{StaticResource PurpleColor}"
+                    WidthRequest="300"
+                    TextColor="White"/>
 
             </StackLayout>
         </StackLayout>

@@ -1,4 +1,5 @@
 ﻿using EventsAppRemastered.Database;
+using EventsAppRemastered.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,14 @@ namespace EventsAppRemastered.Pages {
 
         }
 
+        // Login sys
         private void SingUpButton_Clicked(object sender, EventArgs e) {
-            GoToMainPage();
+            if(userName.Text != null) {
+                App._UserName = userName.Text;
+                GoToMainPage();
+            } else {
+                Toaster.Toast("Please tell us your name.");
+            }
         }
 
         private void GoToMainPage() {
