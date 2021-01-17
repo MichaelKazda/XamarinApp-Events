@@ -21,6 +21,7 @@ namespace EventsAppRemastered.Pages {
 
         public EventsPage(EventDB _EventDatabase) {
             InitializeComponent();
+            eventsPageTitle.Text = App._UserName + "'s Events";
             EventDatabase = _EventDatabase;
 
             //EventDatabase.DeleteEventsAsync();

@@ -46,6 +46,7 @@ namespace EventsAppRemastered.Pages {
                 // mandatory inputs
                 Event evn = new Event() {
                     Name = NameLabel.Text.ToString(),
+                    UserName = App._UserName, // Author of Event
                     Date = date,
                     TimeFrom = timeFrom,
                     TimeTo = timeTo,

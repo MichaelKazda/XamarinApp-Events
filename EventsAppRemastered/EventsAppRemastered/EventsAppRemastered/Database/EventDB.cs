@@ -15,12 +15,15 @@ namespace EventsAppRemastered.Database {
         }
 
         public async Task<List<Event>> GetEventsAsync() {
-            return await _DB.Table<Event>().ToListAsync();
+            return await _DB.Table<Event>()
+                .Where(u => u.UserName == App._UserName)
+                .ToListAsync();
         }
 
         public Task<Event> GetEventAsync(int id) {
             return _DB.Table<Event>()
                             .Where(i => i.ID == id)
+                            .Where(u => u.UserName == App._UserName)
                             .FirstOrDefaultAsync();
         }
 

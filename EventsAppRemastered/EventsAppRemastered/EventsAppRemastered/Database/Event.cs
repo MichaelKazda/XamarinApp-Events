@@ -7,6 +7,7 @@ namespace EventsApp.Database {
 
         [PrimaryKey, AutoIncrement] public int ID { get; set; }
         [NotNull] public string Name { get; set; }
+        public string UserName { get; set; }
         public string Note { get; set; }
         public string Place { get; set; }
         public DateTime Date { get; set; }
