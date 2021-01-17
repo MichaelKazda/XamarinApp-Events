@@ -33,6 +33,11 @@ namespace EventsAppRemastered.Database {
             int deletedRows = await _DB.DeleteAsync(note);
         }
 
+        public async void DeleteEventByID(int ID) {
+            Event evn = await GetEventAsync(ID);
+            DeleteEventAsync(evn);
+        }
+
         public async void DeleteEventsAsync() {
             int deletedRows = await _DB.DeleteAllAsync<Event>();
         }
