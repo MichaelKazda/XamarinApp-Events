@@ -5,7 +5,7 @@
              BackgroundColor="#ffffff">
 
     <ContentPage.Content>
-        <AbsoluteLayout Margin="0,-2,0,0">
+        <AbsoluteLayout Margin="0,-3,0,0">
 
             <StackLayout
                 AbsoluteLayout.LayoutBounds="0,1,1,1"
@@ -17,7 +17,8 @@
                         BackgroundColor="{StaticResource PurpleColor}">
 
                         <Label
-                            Margin="10,-8,0,0"
+                            Margin="0,-5,0,0"
+                            Text="Name"
                             x:Name="eventsPageTitle"
                             TextColor="{StaticResource WhiteColor}"
                             HorizontalOptions="Start"
@@ -26,7 +27,7 @@
 
                     <!-- Frame with event filters -->
                     <Frame
-                        Margin="-8,-20,-8,0"
+                        Margin="-8,-22,-8,0"
                         BackgroundColor="{StaticResource PurpleColor}" 
                         CornerRadius="70" HeightRequest="35">
 
